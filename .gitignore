@@ -1,0 +1,4 @@
+command_log.txt
+notes.txt
+__pycache__/
+*.pyc
