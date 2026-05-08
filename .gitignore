@@ -1,4 +1,6 @@
 command_log.txt
 notes.txt
+assistant_profile.json
+aliases.json
 __pycache__/
 *.pyc
