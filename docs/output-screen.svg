@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-label="CLI Output Preview">
+  <rect width="1200" height="760" fill="#0b1020"/>
+  <rect x="40" y="40" width="1120" height="680" rx="14" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <circle cx="85" cy="75" r="8" fill="#ef4444"/>
+  <circle cx="110" cy="75" r="8" fill="#f59e0b"/>
+  <circle cx="135" cy="75" r="8" fill="#22c55e"/>
+  <text x="170" y="82" fill="#94a3b8" font-family="Consolas, Menlo, monospace" font-size="20">mini_cli_assistant.py</text>
+
+  <text x="70" y="140" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="26">Mini CLI Assistant</text>
+  <text x="70" y="180" fill="#a5b4fc" font-family="Consolas, Menlo, monospace" font-size="22">Type 'help' to see available commands.</text>
+
+  <text x="70" y="240" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="22">You&gt; help</text>
+  <text x="70" y="280" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="20">Available commands: time, date, help, calc, joke, note, notes, history, exit</text>
+
+  <text x="70" y="330" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="22">You&gt; calc 12/3+5</text>
+  <text x="70" y="365" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="20">Result: 9.0</text>
+
+  <text x="70" y="415" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="22">You&gt; note finish assignment</text>
+  <text x="70" y="450" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="20">Note saved.</text>
+
+  <text x="70" y="500" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="22">You&gt; history</text>
+  <text x="70" y="535" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="20">1. help  2. calc 12/3+5  3. note finish assignment</text>
+
+  <text x="70" y="585" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="22">You&gt; exit</text>
+  <text x="70" y="620" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="20">Assistant closed. Bye!</text>
+
+  <text x="70" y="690" fill="#64748b" font-family="Consolas, Menlo, monospace" font-size="18">Developed by Narendra</text>
+</svg>
