@@ -33,19 +33,18 @@
   <text x="130" y="785" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="26">You&gt; insights</text>
   <text x="130" y="830" fill="#fde68a" font-family="Consolas, Menlo, monospace" font-size="21">Usage analytics from real command logs</text>
 
-  <rect x="88" y="920" width="286" height="184" rx="22" fill="#082f49" stroke="#38bdf8" stroke-opacity="0.35"/>
-  <rect x="396" y="920" width="286" height="184" rx="22" fill="#0f3d2e" stroke="#22c55e" stroke-opacity="0.35"/>
-  <rect x="704" y="920" width="286" height="184" rx="22" fill="#3f2b13" stroke="#f59e0b" stroke-opacity="0.35"/>
+  <rect x="88" y="920" width="904" height="94" rx="22" fill="#082f49" stroke="#38bdf8" stroke-opacity="0.35"/>
+  <rect x="88" y="1034" width="904" height="94" rx="22" fill="#0f3d2e" stroke="#22c55e" stroke-opacity="0.35"/>
+  <rect x="88" y="1148" width="904" height="94" rx="22" fill="#3f2b13" stroke="#f59e0b" stroke-opacity="0.35"/>
 
-  <text x="120" y="982" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="30">Smart Matching</text>
-  <text x="120" y="1024" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Natural language and typo-aware intent routing</text>
+  <text x="124" y="976" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="30">Smart Matching</text>
+  <text x="124" y="1008" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Natural language and typo-aware intent routing for a more assistant-like CLI experience</text>
 
-  <text x="428" y="982" fill="#dcfce7" font-family="Arial, sans-serif" font-size="30">Personal Modes</text>
-  <text x="428" y="1024" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">`pro`, `mentor`, and `fun` modes</text>
+  <text x="124" y="1090" fill="#dcfce7" font-family="Arial, sans-serif" font-size="30">Personal Modes</text>
+  <text x="124" y="1122" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Switch between pro, mentor, and fun styles to change the assistant tone</text>
 
-  <text x="736" y="982" fill="#fef3c7" font-family="Arial, sans-serif" font-size="30">Built to Stand Out</text>
-  <text x="736" y="1024" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Aliases, challenges, notes, and insights</text>
-
-  <text x="88" y="1200" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30">Developed by Narendra</text>
-  <text x="88" y="1248" fill="#bae6fd" font-family="Arial, sans-serif" font-size="25">GitHub: narendraborhade-creator/Chat-Based-CLI-Assistant-Mini-AI-System-</text>
+  <text x="124" y="1204" fill="#fef3c7" font-family="Arial, sans-serif" font-size="30">Built to Stand Out</text>
+  <text x="124" y="1236" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Aliases, coding challenges, notes, history, and usage insights go beyond the basic task</text>
+  <text x="88" y="1298" fill="#f8fafc" font-family="Arial, sans-serif" font-size="28">Developed by Narendra</text>
+  <text x="88" y="1332" fill="#bae6fd" font-family="Arial, sans-serif" font-size="22">GitHub: narendraborhade-creator/Chat-Based-CLI-Assistant-Mini-AI-System-</text>
 </svg>
