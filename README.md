@@ -23,5 +23,11 @@ A smart Python command-line assistant with command routing, natural text matchin
 python "C:\Users\victu\Documents\New project\mini_cli_assistant.py"
 ```
 
+## Project Output
+![CLI Output Preview](docs/output-screen.svg)
+
 ## Developer
 Narendra
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
