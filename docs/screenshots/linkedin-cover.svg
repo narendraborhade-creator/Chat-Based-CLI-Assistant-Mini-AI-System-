@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="LinkedIn cover for Chat-Based CLI Assistant project">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#081427"/>
+      <stop offset="55%" stop-color="#0f2942"/>
+      <stop offset="100%" stop-color="#164e63"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <circle cx="925" cy="200" r="190" fill="#38bdf8" opacity="0.12"/>
+  <circle cx="120" cy="1170" r="210" fill="#22c55e" opacity="0.1"/>
+  <text x="88" y="135" fill="#67e8f9" font-family="Consolas, Menlo, monospace" font-size="30">Python Project Showcase</text>
+  <text x="88" y="245" fill="#f8fafc" font-family="Georgia, serif" font-size="76">Chat-Based CLI Assistant</text>
+  <text x="88" y="320" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="34">Mini AI System built from a real internship brief</text>
+
+  <rect x="88" y="390" width="904" height="470" rx="26" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+  <circle cx="135" cy="435" r="8" fill="#fb7185"/>
+  <circle cx="161" cy="435" r="8" fill="#f59e0b"/>
+  <circle cx="187" cy="435" r="8" fill="#22c55e"/>
+  <text x="220" y="444" fill="#94a3b8" font-family="Consolas, Menlo, monospace" font-size="22">Mini CLI Assistant - Unique Edition</text>
+
+  <text x="130" y="520" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="26">You&gt; help</text>
+  <text x="130" y="565" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="21">time, date, help, calc, joke, note, notes, history, insights</text>
+  <text x="130" y="600" fill="#e2e8f0" font-family="Consolas, Menlo, monospace" font-size="21">mode, challenge, alias, aliases, profile, exit</text>
+
+  <text x="130" y="675" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="26">You&gt; mode mentor</text>
+  <text x="130" y="720" fill="#a7f3d0" font-family="Consolas, Menlo, monospace" font-size="21">[Mentor Mode] Mode switched to mentor.</text>
+
+  <text x="130" y="785" fill="#22d3ee" font-family="Consolas, Menlo, monospace" font-size="26">You&gt; insights</text>
+  <text x="130" y="830" fill="#fde68a" font-family="Consolas, Menlo, monospace" font-size="21">Usage analytics from real command logs</text>
+
+  <rect x="88" y="920" width="286" height="184" rx="22" fill="#082f49" stroke="#38bdf8" stroke-opacity="0.35"/>
+  <rect x="396" y="920" width="286" height="184" rx="22" fill="#0f3d2e" stroke="#22c55e" stroke-opacity="0.35"/>
+  <rect x="704" y="920" width="286" height="184" rx="22" fill="#3f2b13" stroke="#f59e0b" stroke-opacity="0.35"/>
+
+  <text x="120" y="982" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="30">Smart Matching</text>
+  <text x="120" y="1024" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Natural language and typo-aware intent routing</text>
+
+  <text x="428" y="982" fill="#dcfce7" font-family="Arial, sans-serif" font-size="30">Personal Modes</text>
+  <text x="428" y="1024" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">`pro`, `mentor`, and `fun` modes</text>
+
+  <text x="736" y="982" fill="#fef3c7" font-family="Arial, sans-serif" font-size="30">Built to Stand Out</text>
+  <text x="736" y="1024" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="22">Aliases, challenges, notes, and insights</text>
+
+  <text x="88" y="1200" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30">Developed by Narendra</text>
+  <text x="88" y="1248" fill="#bae6fd" font-family="Arial, sans-serif" font-size="25">GitHub: narendraborhade-creator/Chat-Based-CLI-Assistant-Mini-AI-System-</text>
+</svg>
