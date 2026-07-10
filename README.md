@@ -17,10 +17,12 @@ A smart Python command-line assistant with command routing, natural text matchin
 - `joke` -> random developer joke
 - `note <text>` / `notes` -> save and view notes
 - `history` -> show session history
+- `/chronicle tips` -> personalized command tips from usage patterns
 
 ## Standout Features (Uniqueness)
 - `mode <pro|mentor|fun>`: switches assistant personality style
 - `insights`: analytics from command log (most used command, peak usage hour, command distribution)
+- `/chronicle tips`: reviews session history and recommends personalized usage improvements
 - `alias add x=<command>`: create your own shortcuts (macro-like behavior)
 - `challenge <easy|medium|hard>`: generates coding challenges for practice
 - Persistent profile and alias memory via JSON files

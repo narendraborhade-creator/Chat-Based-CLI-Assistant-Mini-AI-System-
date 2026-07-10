@@ -53,6 +53,7 @@ INTENT_PATTERNS = {
     "notes": ["show notes", "list notes", "my notes"],
     "history": ["show history", "command history", "my history"],
     "insights": ["insights", "analytics", "usage stats", "command stats"],
+    "chronicle_tips": ["/chronicle tips", "chronicle tips", "session tips", "usage tips"],
 }
 
 
@@ -149,6 +150,7 @@ class MiniCLIAssistant:
             "notes": self.handle_notes,
             "history": self.handle_history,
             "insights": self.handle_insights,
+            "chronicle_tips": self.handle_chronicle_tips,
             "mode": self.handle_mode,
             "challenge": self.handle_challenge,
             "alias": self.handle_alias,
@@ -193,6 +195,11 @@ class MiniCLIAssistant:
         first_word = parts[0].lower()
         rest = parts[1] if len(parts) > 1 else ""
 
+        if first_word in {"/chronicle", "chronicle"}:
+            if rest.strip().lower() == "tips":
+                return IntentResult("chronicle_tips", "")
+            return IntentResult("unknown", expanded)
+
         direct_aliases = {
             "time": "time",
             "date": "date",
@@ -208,6 +215,7 @@ class MiniCLIAssistant:
             "history": "history",
             "insights": "insights",
             "analytics": "insights",
+            "chronicle_tips": "chronicle_tips",
             "mode": "mode",
             "challenge": "challenge",
             "alias": "alias",
@@ -266,6 +274,7 @@ class MiniCLIAssistant:
         print("  notes                  -> show saved notes")
         print("  history                -> show command history")
         print("  insights               -> show usage analytics")
+        print("  /chronicle tips        -> personalized usage tips from history")
         print("  mode <pro|mentor|fun>  -> switch assistant personality")
         print("  challenge <level>      -> coding prompt (easy/medium/hard)")
         print("  alias add x=<command>  -> create shortcut")
@@ -325,28 +334,7 @@ class MiniCLIAssistant:
         return True
 
     def handle_insights(self, _: str) -> bool:
-        if not LOG_FILE.exists() or LOG_FILE.stat().st_size == 0:
-            self.say("No logs found yet. Try running a few commands first.")
-            return True
-
-        lines = LOG_FILE.read_text(encoding="utf-8").splitlines()
-        commands: list[str] = []
-        hours: list[str] = []
-
-        for line in lines:
-            if "] " not in line:
-                continue
-            try:
-                stamp_part, command_text = line.split("] ", maxsplit=1)
-                stamp_text = stamp_part.replace("[", "", 1)
-                stamp = datetime.strptime(stamp_text, "%Y-%m-%d %H:%M:%S")
-                hours.append(stamp.strftime("%H"))
-
-                intent = self.detect_intent(command_text)
-                commands.append(intent.command)
-            except ValueError:
-                continue
-
+        commands, hours = self.parse_log_usage()
         if not commands:
             self.say("Could not parse enough data from logs.")
             return True
@@ -365,6 +353,68 @@ class MiniCLIAssistant:
         for command_name, count in cmd_counts.most_common(6):
             print(f"    - {command_name}: {count}")
 
+        return True
+
+    def parse_log_usage(self) -> tuple[list[str], list[str]]:
+        if not LOG_FILE.exists() or LOG_FILE.stat().st_size == 0:
+            return [], []
+
+        lines = LOG_FILE.read_text(encoding="utf-8").splitlines()
+        commands: list[str] = []
+        hours: list[str] = []
+
+        for line in lines:
+            if "] " not in line:
+                continue
+            try:
+                stamp_part, command_text = line.split("] ", maxsplit=1)
+                stamp_text = stamp_part.replace("[", "", 1)
+                stamp = datetime.strptime(stamp_text, "%Y-%m-%d %H:%M:%S")
+                hours.append(stamp.strftime("%H"))
+                intent = self.detect_intent(command_text)
+                commands.append(intent.command)
+            except ValueError:
+                continue
+
+        return commands, hours
+
+    def handle_chronicle_tips(self, _: str) -> bool:
+        commands, hours = self.parse_log_usage()
+        if not commands:
+            self.say("Not enough session history yet. Run a few commands first.")
+            return True
+
+        cmd_counts = Counter(commands)
+        total = len(commands)
+        unknown_ratio = cmd_counts.get("unknown", 0) / total
+        help_ratio = cmd_counts.get("help", 0) / total
+        top_command, _ = cmd_counts.most_common(1)[0]
+        peak_hour = Counter(hours).most_common(1)[0][0] if hours else None
+
+        tips: list[str] = []
+        if help_ratio >= 0.25:
+            tips.append("You use help often. Create aliases for repeated tasks to reduce lookup time.")
+        if unknown_ratio >= 0.15:
+            tips.append("You hit unknown commands frequently. Try 'help' first and save working commands as aliases.")
+        if cmd_counts.get("alias", 0) + cmd_counts.get("aliases", 0) == 0:
+            tips.append("You have not used aliases yet. Start with: alias add h=help")
+        if cmd_counts.get("insights", 0) == 0:
+            tips.append("Run 'insights' regularly to monitor your command trends over time.")
+        if top_command == "calc":
+            tips.append("Calculator is your top command. Add shortcuts for common formulas with aliases.")
+        elif top_command == "note":
+            tips.append("You save notes often. Pair 'note' with 'notes' to review and organize quick captures.")
+        elif top_command == "history":
+            tips.append("You rely on history often. Convert repeated history items into aliases.")
+        if peak_hour is not None:
+            tips.append(f"Your peak activity is around {peak_hour}:00. Use 'challenge' then for focused practice.")
+        if not tips:
+            tips.append("Great balanced usage. Keep using aliases and insights to stay efficient.")
+
+        print("Chronicle tips:")
+        print(f"  Based on {total} logged commands and your recent usage patterns:")
+        for index, tip in enumerate(tips[:5], start=1):
+            print(f"  {index}. {tip}")
         return True
 
     def handle_mode(self, args: str) -> bool:
